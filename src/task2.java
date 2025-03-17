@@ -1,7 +1,7 @@
 
 public class task2{
 
-    public static long[][] findDeterminant(long[][] arr){
+    public static long[][] removeLastCol(long[][] arr){
         long[][] determinant = new long[arr.length][arr[0].length-1]; //матрица без последнего столбца
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[0].length - 1; j++) {
@@ -36,7 +36,7 @@ public class task2{
 
     public static long[] solve(long[][] matrix){
         long[] triangles = new long[matrix[0].length];
-        long[][] determinant = findDeterminant(matrix);
+        long[][] determinant = removeLastCol(matrix);
         long[][] lastcol = findLastCol(matrix);
         triangles[0] = task1.solve(determinant);
         for (int i = 0; i < matrix.length; i++) {

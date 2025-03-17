@@ -29,10 +29,10 @@ public class Main {
                 {5, -4, -8},
                 {1, -2, -5}
         };
-        long[][] arr3 = {
-                {4, -3, 2, -30},
-                {5, -4, -8, 25},
-                {1, -2, -5, 23}
+        double[][] arr3 = {
+                {2, 1, -1, 8},
+                {-3, -1, 2, 11},
+                {-2, 1, 2, -3}
         };
         Random random = new Random();
         long[][] arrRand = new long[6][7];
@@ -42,9 +42,6 @@ public class Main {
             }
 
         }
-        long result1 = task1.solve(arr3Without);
-        long[] result2 = task2.solve(arr3);
-        System.out.println(result1);
-        System.out.println(Arrays.toString(result2));
+        System.out.println(Arrays.deepToString(task3.solve(arr3)));
     }
 }
