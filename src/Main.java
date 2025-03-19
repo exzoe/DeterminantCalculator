@@ -19,10 +19,10 @@ public class Main {
                 {0,0,0,0,0,0,0,0,0,0,0,0,13},
         };
         //System.out.println(task1.solve(matrix));
-
-        long[][] arr2 = {
-                {2,4,-2},
-                {5,-6,-37}
+        double[][] arr2 = {
+                {1, 0, 4},
+                {-2, 2, -1},
+                {3, -3, 5},
         };
         long[][] arr3Without = {
                 {4, -3, 2},
@@ -34,14 +34,15 @@ public class Main {
                 {-3, -1, 2, 11},
                 {-2, 1, 2, -3}
         };
-        Random random = new Random();
-        long[][] arrRand = new long[6][7];
-        for (int i = 0; i < arrRand.length; i++) {
-            for (int j = 0; j < arrRand[0].length; j++) {
-                arrRand[i][j] = random.nextLong(10);
-            }
+        long[][] arr33 = {
+                {2, 1, -1, 8},
+                {-3, -1, 2, 11},
+                {-2, 1, 2, -3}
+        };
 
-        }
-        System.out.println(Arrays.deepToString(task3.solve(arr3)));
+
+
+        System.out.println(Arrays.toString(task2.solve(arr33)));
+        System.out.println(Arrays.toString(task3.solve(arr3)));
     }
 }
