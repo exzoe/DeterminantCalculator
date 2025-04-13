@@ -1,6 +1,3 @@
-import java.util.Arrays;
-import java.util.Random;
-
 public class Main {
     public static void main(String[] args) {
         long[][] matrix = {
@@ -34,15 +31,23 @@ public class Main {
                 {-3, -1, 2, 11},
                 {-2, 1, 2, -3}
         };
-        long[][] arr33 = {
+        double[][] arr33 = {
                 {2, 1, -1, 8},
                 {-3, -1, 2, 11},
                 {-2, 1, 2, -3}
         };
 
+        double[][] arr333 = {
+                {2, 1, -1},
+                {-3, -1, 2},
+                {-2, 1, 2}
+        };
 
 
-        System.out.println(Arrays.toString(task2.solve(arr33)));
-        System.out.println(Arrays.toString(task3.solve(arr3)));
+
+
+        System.out.println(task34.findDeterminant(arr33));
+        System.out.println(task34.findDeterminant(arr333));
+
     }
 }

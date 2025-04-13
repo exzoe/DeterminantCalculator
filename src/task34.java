@@ -1,4 +1,5 @@
-public class task3 {
+public class task34 {
+    public static int countPermutations = 0;
 
     public static int findRowOfMaxInCol(double[][] matrix, int col, int row){
         double maxInCol = matrix[row][col];
@@ -26,7 +27,8 @@ public class task3 {
             if(rowCount != rowOfMax){
                 double[] temp = matrix[rowCount]; //ловушка ссылки
                 matrix[rowCount] = matrix[rowOfMax];
-                matrix[rowOfMax] = temp; // и меняем его с ведущим числом
+                matrix[rowOfMax] = temp; // и меняем ее со строкой ведущего числа
+                countPermutations++;
 
             }
             if (matrix[rowCount][colNum] == 0) {
@@ -47,6 +49,25 @@ public class task3 {
 
         }
         return matrix;
+    }
+
+    public static double findDeterminant(double[][] matrix) { //таск3
+        countPermutations = 0;
+        double[][] triangular = toTringular(matrix.clone());
+
+        // Проверка на нулевую строку (вырожденная матрица)
+        for (int i = 0; i < triangular.length; i++) {
+            if (Math.abs(triangular[i][i]) < 1e-10) {
+                return 0;
+            }
+        }
+
+        double det = 1.0;
+        for (int i = 0; i < triangular.length; i++) {
+            det *= triangular[i][i];
+        }
+
+        return det * Math.pow(-1, countPermutations);
     }
 
     public static double[] solve(double[][] matrix) {
